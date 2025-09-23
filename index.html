@@ -1,37 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohamed Ayman — Software Engineer</title>
   <style>
-    body {
-      font-family: system-ui, Segoe UI, Roboto, Arial;
-      margin: 0;
-      background: #0f1720;
-      color: #e6eef8;
-      padding: 24px;
-      line-height: 1.6;
-    }
-    .wrap { max-width: 900px; margin: 0 auto; }
-    header { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-    img.photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; }
-    h1 { margin: 0; font-size: 28px; color: #7bd3ff; }
+    /* Reset & basic */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, Segoe UI, Roboto, Arial; background: #0f1720; color: #e6eef8; line-height: 1.6; padding: 24px; }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    /* Header */
+    header { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    img.photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid #7bd3ff; transition: transform 0.3s; }
+    img.photo:hover { transform: scale(1.05); }
+    h1 { font-size: 32px; color: #7bd3ff; }
     .bio { opacity: 0.85; margin-top: 4px; }
     a { color: #7bd3ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    section { background: #0b1220; padding: 20px; border-radius: 12px; margin-top: 20px; }
-    .grid { display: flex; flex-wrap: wrap; gap: 16px; }
-    .card { flex: 1 1 260px; background: #071026; padding: 16px; border-radius: 10px; transition: transform 0.2s; }
-    .card:hover { transform: translateY(-5px); }
-    h2 { border-bottom: 2px solid #7bd3ff; padding-bottom: 4px; margin-bottom: 12px; }
-    h3, h4 { margin: 8px 0; color: #a0e7ff; }
-    footer { margin-top: 24px; opacity: 0.8; font-size: 14px; text-align: center; }
+
+    /* Sections */
+    section { background: #0b1220; padding: 24px; border-radius: 12px; margin-top: 24px; }
+    h2 { border-bottom: 2px solid #7bd3ff; padding-bottom: 6px; margin-bottom: 16px; }
+    h3, h4 { color: #a0e7ff; margin: 8px 0; }
+
+    /* Grid */
+    .grid { display: flex; flex-wrap: wrap; gap: 20px; }
+    .card { flex: 1 1 300px; background: #071026; padding: 20px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(123, 211, 255, 0.3); }
+
+    /* Skills chart */
+    .skill { margin: 10px 0; }
+    .skill-name { margin-bottom: 4px; }
+    .skill-bar { width: 100%; background: #071026; border-radius: 6px; overflow: hidden; }
+    .skill-fill { height: 12px; background: #7bd3ff; width: 0; border-radius: 6px; transition: width 1.2s ease-in-out; }
+
+    /* Buttons */
+    .btn { display: inline-block; padding: 10px 18px; margin-top: 12px; background: #7bd3ff; color: #0f1720; border-radius: 6px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
+    .btn:hover { background: #5bb0d0; }
+
+    /* Footer */
+    footer { margin-top: 30px; text-align: center; opacity: 0.8; font-size: 14px; }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
+    <header class="fade-in" style="animation-delay: 0.1s;">
       <img class="photo" src="IMG_1997.jpeg" alt="Profile photo" />
       <div>
         <h1>HAMIDI Mohamed Ayman</h1>
@@ -40,44 +58,85 @@
           <a href="https://github.com/mohamedaymanhamidi">GitHub</a> • 
           <a href="https://www.linkedin.com/in/mohamed-ayman-hamidi-03b475195/">LinkedIn</a>
         </div>
+        <a class="btn" href="HAMIDI_MohamedAyman_CV.pdf" target="_blank">Download CV</a>
       </div>
     </header>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.2s;">
       <h2>About Me</h2>
-      <p>Ingénieur en génie informatique spécialisé en développement web et applications full-stack. Passionné par la création de solutions concrètes pour des problèmes complexes, et toujours motivé à apprendre de nouvelles technologies.</p>
-      <h3>Skills</h3>
-      <p>Java • Spring Boot • Angular • HTML/CSS • MySQL • Git • REST APIs • Agile / Scrum</p>
+      <p>Ingénieur en génie informatique spécialisé dans le développement full-stack. Je construis des applications web robustes, résous des problèmes complexes et m’adapte rapidement aux nouvelles technologies.</p>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.3s;">
+      <h2>Skills</h2>
+      <div class="skill">
+        <div class="skill-name">Java</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Spring Boot</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Angular</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">HTML/CSS</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">MySQL</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Git</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
+      </div>
+    </section>
+
+    <section class="fade-in" style="animation-delay: 0.4s;">
       <h2>Projects</h2>
       <div class="grid">
         <div class="card">
           <h4>PFE / OCP — Office Chérifien des Phosphates</h4>
           <p><strong>Technologies:</strong> Angular + Spring Boot + MySQL</p>
-          <p><strong>Problem:</strong> Les processus de gestion des utilisateurs et la collecte des statistiques étaient manuels et inefficaces, ce qui ralentissait la prise de décision.</p>
-          <p><strong>Solution:</strong> Développement d’une application full-stack permettant la gestion complète des utilisateurs, la collecte automatique des données et la visualisation des statistiques via des graphiques interactifs.</p>
+          <p><strong>Problem:</strong> Gestion manuelle des utilisateurs et collecte de statistiques inefficaces.</p>
+          <p><strong>Solution:</strong> Application full-stack pour gérer les utilisateurs, automatiser la collecte des données et visualiser les statistiques via des graphiques interactifs.</p>
           <p><a href="https://github.com/mohamedaymanhamidi/PFE">View Repository</a></p>
         </div>
         <div class="card">
           <h4>Backend APIs</h4>
           <p><strong>Technologies:</strong> Java + Spring Boot + MySQL</p>
-          <p><strong>Description:</strong> Création d’APIs REST pour gérer les données de l’application PFE, avec validation, sécurité et performance optimisée.</p>
+          <p><strong>Description:</strong> APIs REST sécurisées et performantes pour gérer les données de l’application PFE et d’autres projets.</p>
           <p><a href="https://github.com/mohamedaymanhamidi/backend">View Repository</a></p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in" style="animation-delay: 0.5s;">
       <h2>Contact</h2>
-      <p>Je suis disponible pour des collaborations, projets freelance ou opportunités d’emploi. N’hésitez pas à me contacter directement !</p>
+      <p>Ouvert à des collaborations, projets freelance ou opportunités d’emploi. Contactez-moi dès maintenant !</p>
       <p>Email: <a href="mailto:medaymanhamidi1@gmail.com">medaymanhamidi1@gmail.com</a></p>
     </section>
 
-    <footer>
+    <footer class="fade-in" style="animation-delay: 0.6s;">
       © 2025 Mohamed Ayman Hamidi — Laâyoune, Morocco
     </footer>
   </div>
+
+  <script>
+    // Animate skill bars on scroll
+    const skills = document.querySelectorAll('.skill-fill');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.style.width;
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skills.forEach(skill => observer.observe(skill));
+  </script>
 </body>
 </html>
