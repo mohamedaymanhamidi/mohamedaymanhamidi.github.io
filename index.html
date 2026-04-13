@@ -1,174 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="22.png" />
-  <title>Mohamed Ayman — Software Engineer</title>
-  <style>
-    /* Reset & basic */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, Segoe UI, Roboto, Arial; background: #0f1720; color: #e6eef8; line-height: 1.6; padding: 24px; }
-    .wrap { max-width: 1000px; margin: 0 auto; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Ayman — Software Engineer</title>
 
-    /* Header */
-    header { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    img.photo { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid #7bd3ff; transition: transform 0.3s; }
-    img.photo:hover { transform: scale(1.05); }
-    h1 { font-size: 32px; color: #7bd3ff; }
-    .bio { opacity: 0.85; margin-top: 4px; }
-    a { color: #7bd3ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Sections */
-    section { background: #0b1220; padding: 24px; border-radius: 12px; margin-top: 24px; }
-    h2 { border-bottom: 2px solid #7bd3ff; padding-bottom: 6px; margin-bottom: 16px; }
-    h3, h4 { color: #a0e7ff; margin: 8px 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+  padding: 20px;
+}
 
-    /* Grid */
-    .grid { display: flex; flex-wrap: wrap; gap: 20px; }
-    .card { flex: 1 1 300px; background: #071026; padding: 20px; border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(123, 211, 255, 0.3); }
+/* WRAPPER */
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+}
 
-    /* Skills chart */
-    .skill { margin: 10px 0; }
-    .skill-name { margin-bottom: 4px; }
-    .skill-bar { width: 100%; background: #071026; border-radius: 6px; overflow: hidden; }
-    .skill-fill { height: 12px; background: #7bd3ff; width: 0; border-radius: 6px; transition: width 1.2s ease-in-out; }
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    /* Buttons */
-    .btn { display: inline-block; padding: 10px 18px; margin-top: 12px; background: #7bd3ff; color: #0f1720; border-radius: 6px; font-weight: bold; text-decoration: none; transition: background 0.3s; }
-    .btn:hover { background: #5bb0d0; }
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #38bdf8;
+  transition: 0.4s;
+}
+.photo:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 25px #38bdf8;
+}
 
-    /* Footer */
-    footer { margin-top: 30px; text-align: center; opacity: 0.8; font-size: 14px; }
+h1 {
+  font-size: 32px;
+  color: #38bdf8;
+}
 
-    /* Animations */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
-    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-  </style>
+.bio {
+  opacity: 0.8;
+}
+
+/* SECTION */
+section {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(56,189,248,0.2);
+  transition: 0.3s;
+}
+
+section:hover {
+  border-color: #38bdf8;
+}
+
+/* PROJECT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* PROJECT CARD */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  transform: translateY(100%);
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card:hover .overlay {
+  transform: translateY(0);
+}
+
+/* TEXT */
+.overlay h4 {
+  color: #38bdf8;
+}
+
+.overlay p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header class="fade-in" style="animation-delay: 0.1s;">
-      <img class="photo" src="IMG_1997.jpeg" alt="Profile photo" />
-      <div>
-        <h1>HAMIDI Mohamed Ayman</h1>
-        <div class="bio">Software Engineer — Java / Spring Boot / Angular — Laâyoune, Morocco</div>
-        <div style="margin-top:6px;">
-          <a href="https://github.com/mohamedaymanhamidi">GitHub</a> • 
-          <a href="https://www.linkedin.com/in/mohamed-ayman-hamidi-03b475195/">LinkedIn</a>
-        </div>
-        <!-- <a class="btn" href="CV HAMIDI Mohamed Ayman FNL.pdf" target="_blank">Download CV</a> -->
-      </div>
-    </header>
 
-    <section class="fade-in" style="animation-delay: 0.2s;">
-      <h2>About Me</h2>
-      <p>Ingénieur en génie informatique spécialisé dans le développement full-stack. Je construis des applications web robustes, résous des problèmes complexes et m’adapte rapidement aux nouvelles technologies.</p>
-    </section>
+<div class="wrap">
 
-    <section class="fade-in" style="animation-delay: 0.3s;">
-      <h2>Skills</h2>
-      <div class="skill">
-        <div class="skill-name">Java</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Spring Boot</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Angular</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">HTML/CSS</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:95%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">MySQL</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Git</div>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
-      </div>
-    </section>
+<header class="fade">
+<img class="photo" src="IMG_1997.jpeg">
+<div>
+<h1>HAMIDI Mohamed Ayman</h1>
+<div class="bio">Full-Stack Software Engineer — Java / Spring Boot / Angular</div>
+</div>
+</header>
 
-    <section class="fade-in" style="animation-delay: 0.4s;">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Dream Cream Truck</h4>
-          <p><strong>Technologies:</strong> Angular, TypeScript, HTML, CSS</p>
-          <p><strong>Description:</strong> Premium ice cream truck website with dynamic menu, interactive sections, and responsive design.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/dream-cream-truck" target="_blank">View Repository</a></p>
-        </div>
-        <div class="card">
-          <h4>HB Moving Theme</h4>
-          <p><strong>Technologies:</strong> PHP, HTML, CSS, JS</p>
-          <p><strong>Description:</strong> Custom theme developed for a moving services platform with booking integration.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/hb-moving-theme" target="_blank">View Repository</a></p>
-        </div>
-        
-        <div class="card">
-          <h4>OCP</h4>
-          <p><strong>Technologies:</strong> Angular, Spring Boot, TypeScript, HTML, CSS, Java</p>
-          <p><strong>Description:</strong> Full-stack project for managing users and collecting statistics efficiently for Office Chérifien des Phosphates.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/OCP" target="_blank">View Repository</a></p>
-        </div>
-        <div class="card">
-          <h4>Backend</h4>
-          <p><strong>Technologies:</strong> Java, Spring Boot, MySQL</p>
-          <p><strong>Description:</strong> REST APIs for handling data securely and efficiently for multiple projects including OCP.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/backend" target="_blank">View Repository</a></p>
-        </div>
-        
-        <div class="card">
-          <h4>Test Interview Project</h4>
-          <p><strong>Technologies:</strong> TypeScript, Angular</p>
-          <p><strong>Description:</strong> Project built for exam purposes to demonstrate practical knowledge of TypeScript and Angular.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/exam-project" target="_blank">View Repository</a></p>
-        </div>
-        <div class="card">
-          <h4>Patate Trading API</h4>
-          <p><strong>Technologies:</strong> Ruby</p>
-          <p><strong>Description:</strong> API built to manage trading operations and data handling for Patate Trading.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/Patate-trading-API" target="_blank">View Repository</a></p>
-        </div>
-        <div class="card">
-          <h4>Personal Portfolio</h4>
-          <p><strong>Technologies:</strong> HTML, CSS, JS</p>
-          <p><strong>Description:</strong> My personal portfolio website showcasing my skills, projects, and contact information.</p>
-          <p><a href="https://github.com/mohamedaymanhamidi/mohamedaymanhamidi.github.io" target="_blank">View Repository</a></p>
-        </div>
-      </div>
-    </section>
+<section class="fade">
+<h2>Projects</h2>
 
-    <section class="fade-in" style="animation-delay: 0.5s;">
-      <h2>Contact</h2>
-      <p>Ouvert à des collaborations, projets freelance ou opportunités d’emploi. Contactez-moi dès maintenant !</p>
-      <p>Email: <a href="mailto:medaymanhamidi1@gmail.com">medaymanhamidi1@gmail.com</a></p>
-    </section>
+<div class="grid">
 
-    <footer class="fade-in" style="animation-delay: 0.6s;">
-      © 2023 Mohamed Ayman Hamidi — Laâyoune, Morocco
-    </footer>
-  </div>
+<!-- PROJECT 1 -->
+<div class="card">
+<img src="screenshots/dreamcream.jpg">
+<div class="overlay">
+<h4>Dream Cream Truck</h4>
+<p>Angular UI with dynamic menu & animations</p>
+<a class="btn" href="https://github.com/mohamedaymanhamidi/dream-cream-truck">View</a>
+</div>
+</div>
 
-  <script>
-    // Animate skill bars on scroll
-    const skills = document.querySelectorAll('.skill-fill');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.width = entry.target.style.width;
-        }
-      });
-    }, { threshold: 0.5 });
+<!-- PROJECT 2 -->
+<div class="card">
+<img src="screenshots/hbmoving.jpg">
+<div class="overlay">
+<h4>HB Moving</h4>
+<p>Custom WordPress + booking system</p>
+<a class="btn" href="#">View</a>
+</div>
+</div>
 
-    skills.forEach(skill => observer.observe(skill));
-  </script>
+<!-- PROJECT 3 -->
+<div class="card">
+<img src="screenshots/ocp.jpg">
+<div class="overlay">
+<h4>OCP Platform</h4>
+<p>Angular + Spring Boot enterprise app</p>
+<a class="btn" href="#">View</a>
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
