@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="22.png" />
 <title>Mohamed Ayman — Software Engineer</title>
 
 <style>
+
 /* RESET */
 * {
   margin: 0;
@@ -14,10 +17,10 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e2e8f0;
-  padding: 20px;
+  font-family: system-ui, Segoe UI, Arial;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e6eef8;
+  padding: 24px;
 }
 
 /* WRAPPER */
@@ -29,122 +32,137 @@ body {
 /* HEADER */
 header {
   display: flex;
-  align-items: center;
   gap: 20px;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .photo {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
-  border: 2px solid #38bdf8;
+  border: 3px solid #38bdf8;
   transition: 0.4s;
 }
+
 .photo:hover {
-  transform: scale(1.1) rotate(2deg);
-  box-shadow: 0 0 25px #38bdf8;
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #38bdf8;
 }
 
 h1 {
-  font-size: 32px;
   color: #38bdf8;
 }
 
 .bio {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/* SECTION */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* SECTIONS */
 section {
   margin-top: 30px;
-  padding: 25px;
-  border-radius: 15px;
-  backdrop-filter: blur(12px);
+  padding: 24px;
+  border-radius: 14px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(56,189,248,0.2);
-  transition: 0.3s;
+  backdrop-filter: blur(10px);
 }
 
-section:hover {
-  border-color: #38bdf8;
+h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 6px;
 }
 
-/* PROJECT GRID */
+/* SKILLS */
+.skill {
+  margin: 10px 0;
+}
+
+.skill-bar {
+  background: #071026;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 10px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  width: 0;
+  transition: 1.2s;
+}
+
+/* PROJECTS GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 /* PROJECT CARD */
 .card {
-  position: relative;
+  background: #071026;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 15px;
-  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.3);
 }
 
 /* IMAGE */
 .card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-  transition: 0.4s;
 }
 
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* CONTENT */
+.card-content {
   padding: 15px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  transform: translateY(100%);
-  transition: 0.4s;
 }
 
-.card:hover img {
-  transform: scale(1.1);
-}
-
-.card:hover .overlay {
-  transform: translateY(0);
-}
-
-/* TEXT */
-.overlay h4 {
-  color: #38bdf8;
-}
-
-.overlay p {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
-  background: #38bdf8;
-  color: black;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
+/* CV SECTION */
+.cv-box {
+  text-align: center;
+  padding: 30px;
+  border: 1px dashed #38bdf8;
+  border-radius: 12px;
 }
 
 /* ANIMATION */
 .fade {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
+  transform: translateY(30px);
+  transition: 0.8s;
 }
 
 .fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.7;
 }
 
 </style>
@@ -154,51 +172,135 @@ section:hover {
 
 <div class="wrap">
 
+<!-- HEADER -->
 <header class="fade">
 <img class="photo" src="IMG_1997.jpeg">
+
 <div>
 <h1>HAMIDI Mohamed Ayman</h1>
-<div class="bio">Full-Stack Software Engineer — Java / Spring Boot / Angular</div>
+<div class="bio">
+Software Engineer — Java / Spring Boot / Angular — Morocco
+</div>
+
+<div style="margin-top:6px;">
+<a href="https://github.com/mohamedaymanhamidi">GitHub</a> •
+<a href="https://www.linkedin.com/in/mohamed-ayman-hamidi-03b475195/">LinkedIn</a>
+</div>
+
+<a class="btn" href="CV HAMIDI Mohamed Ayman FNL.pdf" target="_blank">
+Download CV
+</a>
+
 </div>
 </header>
 
+<!-- ABOUT -->
+<section class="fade">
+<h2>About Me</h2>
+<p>
+Ingénieur en génie informatique spécialisé en développement full-stack, avec une forte maîtrise de Java, Spring Boot et Angular.
+Je conçois et développe des applications web performantes, évolutives et maintenables, en mettant l'accent sur la qualité du code,
+l'expérience utilisateur et les bonnes pratiques d’architecture logicielle.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section class="fade">
+<h2>Skills</h2>
+
+<div class="skill">Java
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+
+<div class="skill">Spring Boot
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+
+<div class="skill">Angular
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+
+<div class="skill">HTML/CSS
+<div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+
+<div class="skill">MySQL
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+
+<div class="skill">Git
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+
+</section>
+
+<!-- PROJECTS -->
 <section class="fade">
 <h2>Projects</h2>
 
 <div class="grid">
 
-<!-- PROJECT 1 -->
 <div class="card">
 <img src="screenshots/dreamcream.jpg">
-<div class="overlay">
+<div class="card-content">
 <h4>Dream Cream Truck</h4>
-<p>Angular UI with dynamic menu & animations</p>
-<a class="btn" href="https://github.com/mohamedaymanhamidi/dream-cream-truck">View</a>
+<p><strong>Tech:</strong> Angular, TypeScript</p>
+<p>Interactive UI with dynamic menu and responsive design.</p>
+<a href="https://github.com/mohamedaymanhamidi/dream-cream-truck">View Repo</a>
 </div>
 </div>
 
-<!-- PROJECT 2 -->
 <div class="card">
 <img src="screenshots/hbmoving.jpg">
-<div class="overlay">
-<h4>HB Moving</h4>
-<p>Custom WordPress + booking system</p>
-<a class="btn" href="#">View</a>
+<div class="card-content">
+<h4>HB Moving Theme</h4>
+<p><strong>Tech:</strong> PHP, JS</p>
+<p>Custom WordPress theme with booking system.</p>
+<a href="https://github.com/mohamedaymanhamidi/hb-moving-theme">View Repo</a>
 </div>
 </div>
 
-<!-- PROJECT 3 -->
 <div class="card">
 <img src="screenshots/ocp.jpg">
-<div class="overlay">
+<div class="card-content">
 <h4>OCP Platform</h4>
-<p>Angular + Spring Boot enterprise app</p>
-<a class="btn" href="#">View</a>
+<p><strong>Tech:</strong> Angular + Spring Boot</p>
+<p>Enterprise application for user and data management.</p>
+<a href="https://github.com/mohamedaymanhamidi/OCP">View Repo</a>
 </div>
 </div>
 
 </div>
 </section>
+
+<!-- CV SECTION -->
+<section class="fade">
+<h2>Curriculum Vitae</h2>
+
+<div class="cv-box">
+<p>
+For a detailed overview of my experience, education, and technical background,
+please download my CV.
+</p>
+
+<a class="btn" href="CV HAMIDI Mohamed Ayman FNL.pdf" target="_blank">
+Download Full CV
+</a>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="fade">
+<h2>Contact</h2>
+<p>
+Disponible pour opportunités, projets freelance ou collaborations professionnelles.
+</p>
+
+<p>Email:
+<a href="mailto:medaymanhamidi1@gmail.com">
+medaymanhamidi1@gmail.com
+</a>
+</p>
+</section>
+
+<footer class="fade">
+© 2026 Mohamed Ayman Hamidi
+</footer>
 
 </div>
 
